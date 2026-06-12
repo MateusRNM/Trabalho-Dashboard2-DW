@@ -11,6 +11,7 @@
   --text-muted: #6B7280;
   --text-inverse: #FFFFFF;
   --text-secondary-header: #998aab;
+  --status-danger: #EF4444;
 }
 
 * {
@@ -29,7 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 1rem;
     background-color: var(--bg-header);
 }
 
@@ -78,4 +79,79 @@ header .box1 .options {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+}
+
+header .box2 {
+    display: flex;
+    gap: 2rem;
+}
+
+header .box2 .infoBox {
+    display: flex;
+    gap: 1rem;
+}
+
+header .box2 .infoBox .temperature {
+    display: flex;
+}
+
+header .box2 .infoBox .temperature h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+header .box2 .infoBox .temperature span {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+header .box2 .infoBox .time span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+header .box2 .infoBox h5 {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+header .box2 .optionsBox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .box2 .optionsBox span.material-symbols-outlined {
+    color: var(--text-secondary-header);
+    font-size: 1.3rem;
+}
+
+header .box2 .optionsBox .notifications {
+    position: relative;
+}
+
+header .box2 .optionsBox img.flag {
+    width: 2rem;
+    height: auto;
+}
+
+header .box2 .optionsBox img.userImg {
+    width: 1.8rem;
+    height: auto;
+}
+
+header .box2 .optionsBox .notifications::before {
+    content: '9+';
+    position: absolute;
+    left: 40%;
+    top: -40%;
+    background-color: var(--status-danger);
+    border-radius: 50%;
+    color: var(--text-inverse);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem;
+    text-align: center;
 }
