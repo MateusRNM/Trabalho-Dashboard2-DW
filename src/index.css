@@ -12,6 +12,9 @@
   --text-inverse: #FFFFFF;
   --text-secondary-header: #998aab;
   --status-danger: #EF4444;
+  --bar-bg: #a199a3;
+  --bar-fill: #f0b52a;
+  --plan-box-gradient: linear-gradient(45deg, #8529df, #8ab655);
 }
 
 * {
@@ -162,12 +165,15 @@ header .box2 .optionsBox .notifications::before {
 .content {
     display: flex;
     height: 100%;
+    overflow: hidden;
 }
 
 .content aside {
     background-color: var(--bg-sidebar);
-    width: 15%;
+    min-width: 15%;
     padding: 1rem;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .content aside .item {
@@ -259,4 +265,90 @@ header .box2 .optionsBox .notifications::before {
     border: 1px solid var(--text-inverse);
     border-radius: 50%;
     padding: 0.3rem;
+}
+
+.content aside .manager-box {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    max-height: 4rem;
+    padding: 0.8rem;
+    margin-top: 1rem;
+}
+
+.content aside .manager-box img {
+    width: 2rem;
+    height: auto;
+    border-radius: 6px;
+    grid-column: 1;
+    grid-row: span 2;
+}
+
+.content aside .manager-box h5 {
+    color: var(--text-inverse);
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.content aside .manager-box span {
+    color: var(--text-inverse);
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.7rem;
+}
+
+.content aside .manager-box span.material-symbols-outlined {
+    color: var(--text-inverse);
+    grid-column: 3;
+    grid-row: span 2;
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+}
+
+.content aside .plan-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--plan-box-gradient);
+}
+
+.content aside .plan-box span {
+    color: var(--text-inverse);
+}
+
+.content aside .plan-box .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content aside .plan-box .info > span {
+    font-size: 0.9rem;
+}
+
+.content aside .plan-box .info .plan {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.content aside .plan-box .bar {
+    position: relative;
+    padding: 0.2rem;
+    background-color: var(--bar-bg);
+    border-radius: 8px;
+}
+
+.content aside .plan-box .bar .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    width: 50%;
+    height: 100%;
+    background-color: var(--bar-fill);
 }
