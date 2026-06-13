@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --color-primary: #8A2BE2;      
+  --color-primary: #9737ff;
   --color-primary-light: #A855F7;
-  --color-primary-dark: #6B21A8;  
+  --color-primary-dark: #850aff;
   --bg-body: #F8F8FB;   
   --bg-header: #FFFFFF;            
   --bg-sidebar: var(--color-primary);
@@ -23,7 +23,10 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-body);
+    height: 100dvh;
 }
 
 header {
@@ -154,4 +157,106 @@ header .box2 .optionsBox .notifications::before {
     font-weight: 600;
     padding: 0.2rem;
     text-align: center;
+}
+
+.content {
+    display: flex;
+    height: 100%;
+}
+
+.content aside {
+    background-color: var(--bg-sidebar);
+    width: 15%;
+    padding: 1rem;
+}
+
+.content aside .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 5px;
+}
+
+.content aside .item.active {
+    background-color: var(--color-primary-dark);
+}
+
+.content aside .item .name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.content aside .item span {
+    color: var(--text-inverse);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.content aside .item span.material-symbols-outlined {
+    font-size: 1.3rem;
+}
+
+.content aside .item .contacts {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.content aside .item .contacts img {
+    width: 1.5rem;
+    height: auto;
+    border-radius: 50%;
+}
+
+.content aside .item .contacts span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.content aside .item .calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary-dark);
+    padding: 0.25rem;
+    border-radius: 50%;
+}
+
+.content aside .item .calendar span {
+    font-size: 0.9rem;
+}
+
+.content aside .separator {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-right: 0.8rem;
+}
+
+.content aside .separator > h4 {
+    color: var(--text-inverse);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.content aside .separator > span {
+    color: var(--text-inverse);
+    font-size: 1.2rem;
+}
+
+#mail {
+    position: relative;
+}
+
+#mail::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    background-color: var(--status-danger);
+    border: 1px solid var(--text-inverse);
+    border-radius: 50%;
+    padding: 0.3rem;
 }
