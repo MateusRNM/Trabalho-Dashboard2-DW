@@ -13,9 +13,19 @@
   --text-inverse: #FFFFFF;
   --text-secondary-header: #998aab;
   --status-danger: #EF4444;
+  --status-success: #74bb7f;
   --bar-bg: #a199a3;
   --bar-fill: #f0b52a;
   --plan-box-gradient: linear-gradient(45deg, #8529df, #8ab655);
+  --blue-primary: #0249e8;
+  --blue-secondary: #dee7fc;
+  --yellow-primary: #fcbc44;
+  --yellow-secondary: #fbe1c0;
+  --red-primary: #c80136;
+  --red-secondary: #f4d5db;
+  --green-primary: #5fbe83;
+  --green-secondary: #eff8f2;
+  --box-shadow: rgba(187, 187, 187, 0.324);
 }
 
 * {
@@ -411,4 +421,136 @@ header .box2 .optionsBox .notifications::before {
     background-color: var(--status-danger);
     padding: 0.3rem;
     border-radius: 50%;
+}
+
+.content main .content-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 3fr 3fr;
+    gap: 2rem;
+    margin: 1rem 10rem;
+    height: 100%;
+}
+
+.content main .content-grid .stats-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--bg-header);
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 2px 2px var(--box-shadow);
+}
+
+.content main .content-grid .stats-card .infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.content main .content-grid .stats-card .infos > div {
+    display: flex;
+    align-items: center;
+}
+
+.content main .content-grid .stats-card .infos > div span {
+    font-weight: 500;
+}
+
+.content main .content-grid .stats-card .infos > div span.material-symbols-outlined {
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.content main .content-grid .stats-card .infos > div.red span {
+    color: var(--status-danger);
+}
+
+.content main .content-grid .stats-card .infos > div.green span {
+    color: var(--status-success);
+}
+
+.content main .content-grid .stats-card .infos > span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.content main .content-grid .stats-card .infos > h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.content main .content-grid .stats-card .bar-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.content main .content-grid .stats-card .bar-box::before {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--bg-header);
+}
+
+.content main .content-grid .stats-card .bar-box .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    width: 65%;
+    height: 65%;
+}
+
+.content main .content-grid .stats-card .bar-box.blue .inner {
+    background-color: var(--blue-secondary);
+}
+
+.content main .content-grid .stats-card .bar-box.blue {
+    background: conic-gradient(var(--blue-primary) 0deg, var(--blue-primary) calc(70 * 3.6deg), var(--blue-secondary) calc(70 * 3.6deg), var(--blue-secondary) 360deg);
+}
+
+.content main .content-grid .stats-card .bar-box.blue span {
+    color: var(--blue-primary);
+}
+
+.content main .content-grid .stats-card .bar-box.yellow .inner {
+    background-color: var(--yellow-secondary);
+}
+
+.content main .content-grid .stats-card .bar-box.yellow {
+    background: conic-gradient(var(--yellow-primary) 0deg, var(--yellow-primary) calc(80 * 3.6deg), var(--yellow-secondary) calc(80 * 3.6deg), var(--yellow-secondary) 360deg);
+}
+
+.content main .content-grid .stats-card .bar-box.yellow span {
+    color: var(--yellow-primary);
+}
+
+.content main .content-grid .stats-card .bar-box.red .inner {
+    background-color: var(--red-secondary);
+}
+
+.content main .content-grid .stats-card .bar-box.red {
+    background: conic-gradient(var(--red-primary) 0deg, var(--red-primary) calc(45 * 3.6deg), var(--red-secondary) calc(45 * 3.6deg), var(--red-secondary) 360deg);
+}
+
+.content main .content-grid .stats-card .bar-box.red span {
+    color: var(--red-primary);
+}
+
+.content main .content-grid .stats-card .bar-box.green .inner {
+    width: 90%;
+    height: 90%;
+    background-color: var(--green-secondary);
+}
+
+.content main .content-grid .stats-card .bar-box.green span {
+    color: var(--green-primary);
 }
