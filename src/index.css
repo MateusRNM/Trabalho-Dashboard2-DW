@@ -7,6 +7,7 @@
   --bg-body: #F8F8FB;   
   --bg-header: #FFFFFF;            
   --bg-sidebar: var(--color-primary);
+  --bg-top-content: #ece0fa;
   --text-main: #1F2937;
   --text-muted: #6B7280;
   --text-inverse: #FFFFFF;
@@ -351,4 +352,63 @@ header .box2 .optionsBox .notifications::before {
     width: 50%;
     height: 100%;
     background-color: var(--bar-fill);
+}
+
+.content main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content main .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-top-content);
+    padding: 1rem 10rem;
+}
+
+.content main .top .title {
+    display: flex;
+    flex-direction: column;
+}
+
+.content main .top .title h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.content main .top .title span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.content main .top .infos {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.content main .top .infos span {
+    font-size: 0.95rem;
+}
+
+.content main .top .infos span.material-symbols-outlined {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+#shopping-icon {
+    position: relative;
+}
+
+#shopping-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -45%;
+    background-color: var(--status-danger);
+    padding: 0.3rem;
+    border-radius: 50%;
 }
