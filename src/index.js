@@ -1,4 +1,5 @@
 const canvasFinanceGraph = document.getElementById("financeGraph");
+const canvasSalesGraph = document.getElementById("salesGraph");
 
 const ctx = canvasFinanceGraph.getContext('2d');
 
@@ -75,6 +76,36 @@ new Chart(ctx, {
           color: '#F3F4F6',
           drawBorder: false
         }
+      }
+    }
+  }
+});
+
+new Chart(canvasSalesGraph, {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      data: [40, 10, 15, 25, 10], 
+      backgroundColor: [
+        '#E5E7EB', 
+        '#4ADE80',
+        '#FB38B4',
+        '#A855F7', 
+        '#38BDF8',
+      ],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    cutout: '65%', 
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        enabled: true
       }
     }
   }

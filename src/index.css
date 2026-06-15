@@ -431,9 +431,10 @@ header .box2 .optionsBox .notifications::before {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 3fr 3fr;
-    gap: 2rem;
-    margin: 1rem 10rem;
-    height: 100%;
+    gap: 1.5rem;
+    margin: 1rem 10rem 0rem 10rem;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .content main .content-grid .stats-card {
@@ -559,7 +560,7 @@ header .box2 .optionsBox .notifications::before {
     color: var(--green-primary);
 }
 
-.content main .content-grid .finance-box {
+.content main .content-grid .graph-box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 0.25fr 0.25fr 2fr 0.6fr;
@@ -570,14 +571,14 @@ header .box2 .optionsBox .notifications::before {
     padding: 1rem 1rem 0 1rem;
 }
 
-.content main .content-grid .finance-box > h4 {
+.content main .content-grid .graph-box > h4 {
     font-size: 1.1rem;
     font-weight: 600;
     grid-row: 1;
     grid-column: span 4;
 }
 
-.content main .content-grid .finance-box > span {
+.content main .content-grid .graph-box > span {
     font-size: 0.8rem;
     font-weight: 400;
     color: var(--text-muted);
@@ -585,13 +586,13 @@ header .box2 .optionsBox .notifications::before {
     grid-column: span 4;
 }
 
-.content main .content-grid .finance-box .graph-container {
+.content main .content-grid .graph-container {
     position: relative;
     grid-row: 3;
     grid-column: span 4;
 }
 
-.content main .content-grid .finance-box .option {
+.content main .content-grid .option {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -601,24 +602,24 @@ header .box2 .optionsBox .notifications::before {
     padding: 0rem 0.5rem 0.5rem 0.5rem;
 }
 
-.content main .content-grid .finance-box .option > h5 {
+.content main .content-grid .option > h5 {
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-secondary-header);
 }
 
-.content main .content-grid .finance-box .option > span {
+.content main .content-grid .option > span {
     font-size: 0.8rem;
     font-weight: 400;
     color: var(--text-muted);
 }
 
-.content main .content-grid .finance-box .option.active {
+.content main .content-grid .option.active {
     background-color: var(--bg-option);
     border-bottom: 3px solid var(--color-primary-dark);
 }
 
-.content main .content-grid .finance-box .option.active > h5 {
+.content main .content-grid .option.active > h5 {
     color: var(--color-primary);
 }
 
@@ -761,4 +762,61 @@ header .box2 .optionsBox .notifications::before {
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--text-inverse);
+}
+
+.content main .content-grid .sales-box {
+    display: flex;
+    flex-direction: column;
+    grid-row: 3;
+    grid-column: 1;
+    background-color: var(--bg-header);
+    border-radius: 6px;
+    box-shadow: 2px 2px var(--box-shadow);
+    padding: 1rem;
+}
+
+.content main .content-grid .sales-box > h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.content main .content-grid .sales-box > h5 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.content main .content-grid .sales-box span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.content main .content-grid .sales-box .percentage span:nth-child(1) {
+    font-weight: 600;
+    color: var(--status-success);
+}
+
+.content main .content-grid .sales-box .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.content main .content-grid .sales-box .center-text h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.content main .content-grid .sales-box .center-text span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--status-success);
+}
+
+#doughnutContainer {
+    align-self: center;
+    max-width: 80%;
+    height: auto;
 }
