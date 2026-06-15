@@ -8,6 +8,7 @@
   --bg-header: #FFFFFF;            
   --bg-sidebar: var(--color-primary);
   --bg-top-content: #ece0fa;
+  --bg-option: #f9f5ff;
   --text-main: #1F2937;
   --text-muted: #6B7280;
   --text-inverse: #FFFFFF;
@@ -553,4 +554,67 @@ header .box2 .optionsBox .notifications::before {
 
 .content main .content-grid .stats-card .bar-box.green span {
     color: var(--green-primary);
+}
+
+.content main .content-grid .finance-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.25fr 0.25fr 2fr 0.6fr;
+    grid-column: span 2;
+    background-color: var(--bg-header);
+    border-radius: 6px;
+    box-shadow: 2px 2px var(--box-shadow);
+    padding: 1rem 1rem 0 1rem;
+}
+
+.content main .content-grid .finance-box > h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    grid-row: 1;
+    grid-column: span 4;
+}
+
+.content main .content-grid .finance-box > span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    grid-row: 2;
+    grid-column: span 4;
+}
+
+.content main .content-grid .finance-box .graph-container {
+    position: relative;
+    grid-row: 3;
+    grid-column: span 4;
+}
+
+.content main .content-grid .finance-box .option {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-row: 4;
+    grid-column: span 1;
+    border-radius: 4px 4px 0 0;
+    padding: 0rem 0.5rem 0.5rem 0.5rem;
+}
+
+.content main .content-grid .finance-box .option > h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary-header);
+}
+
+.content main .content-grid .finance-box .option > span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.content main .content-grid .finance-box .option.active {
+    background-color: var(--bg-option);
+    border-bottom: 3px solid var(--color-primary-dark);
+}
+
+.content main .content-grid .finance-box .option.active > h5 {
+    color: var(--color-primary);
 }
