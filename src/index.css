@@ -618,3 +618,64 @@ header .box2 .optionsBox .notifications::before {
 .content main .content-grid .finance-box .option.active > h5 {
     color: var(--color-primary);
 }
+
+.content main .content-grid .gold-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-header);
+    border-radius: 6px;
+    box-shadow: 2px 2px var(--box-shadow);
+    padding: 1rem;
+}
+
+.content main .content-grid .gold-box > h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.content main .content-grid .gold-box span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.content main .content-grid .gold-box .value-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+
+.content main .content-grid .gold-box .value-box > h3 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.content main .content-grid .gold-box .value-box > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content main .content-grid .gold-box .value-box > div span {
+    color: var(--status-success);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.content main .content-grid .gold-box .value-box > div span.material-symbols-outlined {
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.content main .content-grid .gold-box > h5 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.content main .content-grid .gold-box .percentage span:nth-child(1) {
+    font-weight: 600;
+    color: var(--status-success);
+}
