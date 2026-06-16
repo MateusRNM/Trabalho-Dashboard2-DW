@@ -15,9 +15,28 @@ cyanGradient.addColorStop(1, 'rgba(6, 182, 212, 0.0)');
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu-btn");
   const sidebar = document.getElementById("sidebar");
+  const themeBtn = document.getElementById("theme-button");
+  const currentTheme = localStorage.getItem("theme");
+
+  if(currentTheme === 'dark') {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+
+  themeBtn.addEventListener("click", () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    if(theme === "dark") {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    }
+  });
+
   menuBtn.addEventListener("click", () => {
     sidebar.classList.toggle("show-mobile");
   });
+
   document.addEventListener("click", (event) => {
     const isMenuOpen = sidebar.classList.contains("show-mobile");
     if(isMenuOpen && !sidebar.contains(event.target) && !menuBtn.contains(event.target)) {
