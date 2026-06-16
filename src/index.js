@@ -1,5 +1,6 @@
 const canvasFinanceGraph = document.getElementById("financeGraph");
 const canvasSalesGraph = document.getElementById("salesGraph");
+const canvasImportExportGraph = document.getElementById("importExportGraph");
 
 const ctx = canvasFinanceGraph.getContext('2d');
 
@@ -17,7 +18,7 @@ new Chart(ctx, {
     labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'], 
     datasets: [
       {
-        label: 'Receita',
+        label: 'Income',
         data: [19, 26, 27, 8, 30, 8, 11],
         borderColor: '#8B5CF6',
         backgroundColor: purpleGradient, 
@@ -28,7 +29,7 @@ new Chart(ctx, {
         tension: 0
       },
       {
-        label: 'Despesas',
+        label: 'Expense',
         data: [8, 19, 15, 6, 12, 6, 8],
         borderColor: '#06B6D4',
         backgroundColor: cyanGradient,
@@ -106,6 +107,79 @@ new Chart(canvasSalesGraph, {
       },
       tooltip: {
         enabled: true
+      }
+    }
+  }
+});
+
+new Chart(canvasImportExportGraph, {
+  type: 'line',
+  data: {
+    labels: ['1 Feb', '2 Feb', '3 Feb', '4 Feb', '5 Feb', '6 Feb', '7 Feb', '8 Feb', '9 Feb', '10 Feb', '11 Feb', '12 Feb'], 
+    datasets: [
+      {
+        label: 'Exported',
+        data: [15, 4.5, 13, 7, 18, 15, 6, 1.8, 14, 19, 13, 17],
+        borderColor: '#8B5CF6',
+        backgroundColor: purpleGradient, 
+        borderWidth: 2,
+        pointBackgroundColor: '#8B5CF6',
+        pointRadius: 0,
+        fill: true,
+        tension: 0.4
+      },
+      {
+        label: 'Imported',
+        data: [34, 17, 22, 20.5, 33, 23, 12, 2, 30, 21, 16, 21.5],
+        borderColor: '#06B6D4',
+        backgroundColor: cyanGradient,
+        borderWidth: 2,
+        pointBackgroundColor: '#06B6D4',
+        pointRadius: 0,
+        fill: true,
+        tension: 0.4
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+          drawBorder: false
+        },
+        ticks: {
+            color: '#9CA3AF',
+            font: {
+                size: 11
+            }
+        }
+      },
+      y: {
+        min: 0,
+        max: 35,
+        ticks: {
+          stepSize: 5,
+          color: '#9CA3AF',
+          font: {
+            size: 11
+          }
+        },
+        grid: {
+          color: '#F3F4F6',
+          drawBorder: false
+        }
       }
     }
   }
