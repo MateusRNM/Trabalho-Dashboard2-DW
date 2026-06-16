@@ -372,7 +372,29 @@ header .box2 .optionsBox .notifications::before {
 .content main {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
+}
+
+.content main > button {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.content main > button > span {
+    font-size: 1.4rem;
+    color: var(--text-inverse);
 }
 
 .content main .top {
@@ -818,7 +840,7 @@ header .box2 .optionsBox .notifications::before {
 
 #doughnutContainer {
     align-self: center;
-    max-width: 70%;
+    max-width: 14rem;
     height: auto;
 }
 
@@ -963,4 +985,126 @@ header .box2 .optionsBox .notifications::before {
 
 .content main .content-grid .inventory-box .info-box .info:nth-child(2) span.material-symbols-outlined {
     color: var(--color-primary-light);
+}
+
+@media (max-width: 1600px) {
+    .content main .top {
+        padding: 1rem 2rem;
+    }
+
+    .content main .content-grid {
+        margin: 1rem 2rem;
+    }
+
+    header .box1 .searchInput {
+        margin-left: 2rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 1500px) {
+    .content main .top {
+        padding: 0.5rem 1rem;
+    }
+
+    .content main .content-grid {
+        margin: 0.5rem 1rem;
+    }
+
+    header .box1 .searchInput {
+        margin-left: 1rem;
+        margin-right: 0.5rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    header .box1 .options,
+    header .box1 .searchInput,
+    header .box2 .infoBox {
+        display: none;
+    }
+
+    .content aside .item span:not(.material-symbols-outlined),
+    .content aside .separator span,
+    .content aside .manager-box,
+    .content aside .manager-box span,
+    .content aside .manager-box img,
+    .content aside .manager-box h5,
+    .content aside .plan-box .info > span,
+    .content aside .item .contacts,
+    .content aside .item .calendar {
+        display: none;
+    }
+
+    .content aside {
+        width: 5rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .content aside .item {
+        justify-content: center;
+    }
+
+    .content aside .manager-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    .content main .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+    }
+
+    .content main .content-grid .graph-box,
+    .content main .content-grid .orders-card,
+    .content main .content-grid .gold-box,
+    .content main .content-grid .sales-box,
+    .content main .content-grid .inventory-box {
+        grid-column: span 2;
+        grid-row: auto; 
+    }
+
+    .content main .content-grid .sales-box,
+    .content main .content-grid .inventory-box {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .content aside {
+        display: none;
+    }
+
+    .content main .top {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .content main .top .infos > span:not(.material-symbols-outlined) {
+        display: none;
+    }
+
+    .content main .content-grid {
+        margin: 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .content main .content-grid .stats-card,
+    .content main .content-grid .graph-box,
+    .content main .content-grid .orders-card,
+    .content main .content-grid .gold-box,
+    .content main .content-grid .sales-box,
+    .content main .content-grid .inventory-box {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    header .box2 .optionsBox img.flag,
+    header .box2 .optionsBox span.material-symbols-outlined:not(.notifications) {
+        display: none;
+    }
 }
