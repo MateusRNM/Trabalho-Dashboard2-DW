@@ -12,6 +12,20 @@ const cyanGradient = ctx.createLinearGradient(0, 0, 0, 300);
 cyanGradient.addColorStop(0, 'rgba(6, 182, 212, 0.6)');
 cyanGradient.addColorStop(1, 'rgba(6, 182, 212, 0.0)');
 
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const sidebar = document.getElementById("sidebar");
+  menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("show-mobile");
+  });
+  document.addEventListener("click", (event) => {
+    const isMenuOpen = sidebar.classList.contains("show-mobile");
+    if(isMenuOpen && !sidebar.contains(event.target) && !menuBtn.contains(event.target)) {
+      sidebar.classList.remove("show-mobile");
+    }
+  });
+})
+
 new Chart(ctx, {
   type: 'line',
   data: {

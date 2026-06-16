@@ -1072,8 +1072,33 @@ header .box2 .optionsBox .notifications::before {
 }
 
 @media (max-width: 768px) {
+
+    @keyframes slideIn {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+    }
+
     .content aside {
         display: none;
+    }
+
+    .content aside .item span:not(.material-symbols-outlined), .content aside .separator span {
+        display: block;
+    }
+
+    .content aside .item {
+        justify-content: flex-start;
+    }
+
+    .content aside.show-mobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 50%;
+        height: 100%;
+        z-index: 1;
+        animation: slideIn 0.3s ease forwards;
     }
 
     .content main .top {
