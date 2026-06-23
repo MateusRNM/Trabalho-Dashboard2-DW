@@ -1088,17 +1088,18 @@ header .box2 .optionsBox .notifications::before {
     }
 
     .content main .content-grid .graph-box,
-    .content main .content-grid .orders-card,
-    .content main .content-grid .gold-box,
     .content main .content-grid .sales-box,
     .content main .content-grid .inventory-box {
         grid-column: span 2;
-        grid-row: auto; 
+        grid-row: auto;
     }
 
     .content main .content-grid .sales-box,
+    .content main .content-grid .gold-box,
+    .content main .content-grid .orders-card,
     .content main .content-grid .inventory-box {
         grid-column: span 1;
+        grid-row: auto;
     }
 }
 
